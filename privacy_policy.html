@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="uz">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sardor AI Telegram yordamchisi ma’lumotlarni qanday yig‘ishi, ishlatishi, saqlashi va himoyalashi haqidagi maxfiylik siyosati.">
+  <meta name="color-scheme" content="light">
+  <title>Sardor AI — Maxfiylik siyosati</title>
+  <style>
+    :root { color-scheme: light; --ink:#17243a; --muted:#52627a; --blue:#1457a6; --line:#dbe4ef; --soft:#f2f7fd; --accent:#e8f2ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:#f5f8fc; color:var(--ink); font:16px/1.7 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { width:min(920px, calc(100% - 32px)); margin:40px auto; }
+    header { padding:38px clamp(22px,5vw,54px); color:white; background:linear-gradient(130deg,#123b70,#1766b2); border-radius:20px 20px 0 0; }
+    header p { max-width:700px; margin:10px 0 0; color:#e3efff; }
+    h1 { margin:0; font-size:clamp(2rem,5vw,3rem); line-height:1.15; }
+    .meta { margin-top:18px; font-size:.93rem; color:#d6e8ff; }
+    article { padding:clamp(22px,5vw,54px); background:white; border:1px solid var(--line); border-top:0; border-radius:0 0 20px 20px; box-shadow:0 16px 45px #173c6810; }
+    h2 { margin:38px 0 10px; padding-top:8px; font-size:1.35rem; line-height:1.35; color:#163d70; }
+    h2:first-of-type { margin-top:26px; }
+    h3 { margin:20px 0 8px; font-size:1.05rem; }
+    p { margin:10px 0; }
+    ul,ol { padding-left:24px; }
+    li { margin:6px 0; }
+    a { color:#1259a5; overflow-wrap:anywhere; }
+    .notice { margin:22px 0; padding:16px 18px; border-left:4px solid #3178c8; border-radius:8px; background:var(--soft); }
+    .summary { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:12px; margin:22px 0; }
+    .summary div { padding:15px; border:1px solid var(--line); border-radius:12px; background:#fbfdff; }
+    .summary strong { display:block; margin-bottom:4px; color:#16477f; }
+    .small { color:var(--muted); font-size:.94rem; }
+    footer { margin-top:30px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:.92rem; }
+    @media (max-width:600px) { main { width:100%; margin:0; } header,article { border-radius:0; } }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Sardor AI</h1>
+    <p>Maxfiylik siyosati</p>
+    <div class="meta">Versiya 1.0 · Oxirgi yangilanish: 2026-yil 25-noyabr</div>
+  </header>
+  <article>
+    <p>Ushbu siyosat Sardor AI shaxsiy Telegram yordamchisi orqali ma’lumotlar qanday olinishi, ishlatilishi, saqlanishi va himoyalanishini tushuntiradi. Sardor AI mustaqil shaxsiy loyiha bo‘lib, Telegram yoki OpenAI tomonidan boshqarilmaydi.</p>
+    <div class="notice"><strong>Qisqacha:</strong> bot Telegram xabarlarini qabul qiladi, lekin faqat oldindan sozlangan egasining Telegram ID raqamiga xizmat ko‘rsatadi. Oddiy suhbat matni OpenAI’ga faqat egasi alohida rozilik berganidan keyin yuboriladi. Mahalliy vazifa va hujjat tahlili tashqi AI xizmatiga yuborilmaydi.</div>
+
+    <div class="summary" aria-label="Asosiy ma’lumotlar">
+      <div><strong>Kim foydalanadi</strong>Faqat egasi ruxsat bergan Telegram akkaunti.</div>
+      <div><strong>AI uzatishi</strong>Faqat shaxsiy chat va faol rozilik bilan.</div>
+      <div><strong>Saqlash joyi</strong>Bot ishlayotgan Windows kompyuteri.</div>
+      <div><strong>Rozilikni bekor qilish</strong>/revoke_ai buyrug‘i orqali.</div>
+    </div>
+
+    <h2>1. Xizmat egasi va qo‘llanish doirasi</h2>
+    <p>Sardor AI egasining shaxsiy yordamchisi sifatida ishlaydi. Bot ishga tushganda Telegram’dan yangilanishlarni (xabarlar va ularga tegishli texnik maydonlarni) Bot API orqali oladi. Bot xabar yuborgan akkauntning Telegram ID raqamini mahalliy sozlamadagi ruxsat etilgan ID bilan solishtiradi.</p>
+    <p>Ruxsat etilmagan akkauntlardan kelgan xabarlarga bot javob bermaydi, ularni suhbat tarixiga yozmaydi va OpenAI’ga yubormaydi. Ular polling yangilanishi tarkibida kompyuterga qisqa muddat kelishi mumkin, so‘ng bot ularni e’tiborsiz qoldiradi. Telegram ushbu xabarlarni o‘z platformasida o‘z siyosatiga muvofiq qayta ishlaydi.</p>
+    <p>Guruhdagi xabarlar AI suhbatiga yuborilmaydi. Bot guruhda faqat o‘ziga aniq murojaat qilingan yoki bot xabariga javob tarzida kelgan ayrim buyruqlarni ko‘rishi mumkin; shaxsiy ma’lumotli buyruqlar va AI suhbatlari shaxsiy chat bilan cheklangan.</p>
+
+    <h2>2. Qanday ma’lumotlar olinadi</h2>
+    <ul>
+      <li><strong>Telegram xabari va texnik ma’lumotlar:</strong> xabar matni, Telegram foydalanuvchi va chat identifikatorlari, xabar identifikatori, chat turi hamda Telegram yuboradigan yangilanish maydonlari. Bular botning egasini tekshirishi, buyruqni bajarishi va javobni kerakli chatga qaytarishi uchun ishlatiladi.</li>
+      <li><strong>Suhbat tarixi:</strong> AI suhbatiga rozilik berilganda, joriy chatdagi foydalanuvchi va yordamchi xabarlarining so‘nggi 12 tagacha yozuvi (joriy xabar bilan birga) saqlanadi va keyingi javoblar uchun kontekst bo‘lishi mumkin.</li>
+      <li><strong>Vazifa, xotira va eslatmalar:</strong> egasi botga kiritgan topshiriqlar, muddatlar, reja bosqichlari, xotira yozuvlari, eslatmalar va ularning holati.</li>
+      <li><strong>Rozilik qaydlari:</strong> AI roziligi berilgan yoki bekor qilingan holat, tegishli chat va foydalanuvchi identifikatorlari, siyosat versiyasi hamda vaqt qaydlari.</li>
+      <li><strong>Texnik hisoblagichlar:</strong> kunlik OpenAI so‘rovlari soni va Telegram yangilanishlarini takroran qayta ishlamaslik uchun offset. Bu fayllarda suhbat matni saqlanmaydi; ilova ularni DPAPI bilan shifrlamaydi.</li>
+      <li><strong>Fayllar, agar egasi qabul qilishni yoqsa:</strong> shaxsiy chatda yuborilgan, hajmi 20 MB gacha bo‘lgan PNG, JPG/JPEG, XLSX, DOCX yoki PDF. Fayl qabul qilish sukut bo‘yicha o‘chiq va egasi sozlamada alohida yoqishi kerak.</li>
+    </ul>
+    <p>Bot xizmat ko‘rsatish uchun zarur bo‘lmagan profil ma’lumotlarini so‘ramaydi. Maxfiy parol, bank karta ma’lumoti, API kaliti yoki boshqa sirlarni xabar yoki hujjatga kiritmaslik tavsiya etiladi.</p>
+
+    <h2>3. Ma’lumotlardan foydalanish maqsadi</h2>
+    <ul>
+      <li>egasining Telegram buyruqlariga javob berish va shaxsiy yordamchi vazifalarini bajarish;</li>
+      <li>AI roziligi faol bo‘lsa, xabar mazmuniga javob tayyorlash va suhbat kontekstini saqlash;</li>
+      <li>topshiriqlar, xotiralar va eslatmalarni egasi uchun boshqarish;</li>
+      <li>mahalliy hujjat yoki rasm tahlilini bajarish, xavfsizlik va fayl hajmi cheklovlarini qo‘llash;</li>
+      <li>so‘rovlar limitini hisoblash, Telegram yangilanishlarini takrorlamaslik va texnik xatolarni aniqlash.</li>
+    </ul>
+    <p>Ma’lumotlar reklama, foydalanuvchi profili tuzish yoki sotish uchun ishlatilmaydi.</p>
+
+    <h2>4. OpenAI’ga uzatiladigan ma’lumot va rozilik</h2>
+    <p>Oddiy xabar matni OpenAI Responses API’ga faqat egasi shaxsiy chatda rozilik berganidan keyin yuboriladi. Rozilik jarayoni ikki qadamli: avval <code>/consent_ai</code> buyrug‘i siyosat mazmunini ko‘rsatadi; so‘ng egasi 10 daqiqa ichida <code>/consent_ai ha</code> deb tasdiqlashi kerak. Rozilik har bir shaxsiy chat va akkaunt doirasida qayd qilinadi.</p>
+    <p>Rozilik faol bo‘lsa, OpenAI so‘rovida joriy xabar, shu chatdagi oldingi 11 tagacha xabar, yordamchi uchun ko‘rsatmalar va tanlangan model nomi bo‘ladi. Telegram foydalanuvchi/chat ID kodi so‘rov matniga ataylab qo‘shilmaydi. OpenAI javobi Telegram orqali egasiga qaytariladi va mahalliy suhbat tarixida saqlanishi mumkin.</p>
+    <p>OpenAI so‘rovida <code>store: false</code> parametri ishlatiladi. OpenAI’ning amaldagi API ma’lumot nazorati hujjatlariga ko‘ra, API ma’lumotlari odatda modelni o‘qitish uchun ishlatilmaydi; biroq suiiste’molni nazorat qilish jurnallari so‘rov mazmunini o‘z ichiga olishi va odatda 30 kungacha saqlanishi mumkin. Istisnolar, saqlash muddati va xizmat shartlari o‘zgarishi mumkin; batafsil ma’lumot <a href="https://developers.openai.com/api/docs/guides/your-data/" rel="noopener noreferrer">OpenAI API ma’lumot nazorati</a> sahifasida berilgan.</p>
+    <p>OpenAI API ishlatilishi hisob-kitobga olib kelishi mumkin. Botda kunlik so‘rovlar limiti sozlanadi (standart qiymat — kuniga 20 ta urinish; muvaffaqiyatsiz urinishlar ham hisoblanishi mumkin).</p>
+    <p>AI roziligi bo‘lmasa yoki rozilik holatini tekshirib bo‘lmasa, OpenAI so‘rovi yuborilmaydi. Mahalliy vazifa buyruqlari va hujjat tahlili AI roziligisiz ham ishlashi mumkin.</p>
+
+    <h2>5. Hujjatlar va rasmlarni qayta ishlash</h2>
+    <p>Egasi <code>/doc_analyze</code> buyrug‘i bilan tanlagan mahalliy fayllar hamda sozlamada ixtiyoriy ravishda yoqilgan Telegram qo‘shimchalari Sardor AI’ning mahalliy vositalari orqali tekshiriladi. Bu tahlillar OpenAI yoki boshqa tashqi AI xizmatiga yuborilmaydi.</p>
+    <ul>
+<li>XLSX va rasm fayllari mahalliy tahlil uchun vaqtinchalik yoziladi; ilova ularni ishlov tugagach o‘chirishga urinadi. Tozalash xatosi bo‘lsa, foydalanuvchiga incoming_documents papkasini tekshirish haqida xabar beradi.</li>
+      <li>DOCX matni xotirada ajratib olinadi; bot uni avtomatik ravishda doimiy fayl qilib saqlamaydi.</li>
+      <li>Telegram orqali kelgan PDF hozircha turi va hajmi bo‘yicha tekshiriladi; to‘liq PDF matn tahlili bu oqimda bajarilmaydi.</li>
+      <li>Mahalliy fayl tahlili natijasi Telegram javobi sifatida qaytarilishi mumkin. Noaniq natija avtomatik ravishda aniq fakt deb qabul qilinmasligi kerak.</li>
+    </ul>
+
+    <h2>6. Saqlash joyi va muddatlari</h2>
+    <p>Bot doimiy serverda emas, egasining Windows kompyuterida ishlaydi. U yerda quyidagi ma’lumotlar qolishi mumkin:</p>
+    <ul>
+      <li><code>data/conversations.json</code> — suhbat tarixining shifrlangan nusxasi. Har bir suhbatda so‘nggi 12 tagacha xabar saqlanadi; ko‘pi bilan 50 ta chat konteksti yuritiladi. Vaqt bo‘yicha avtomatik o‘chirish yo‘q; limitdan oshganda eng eski chat konteksti chiqarib tashlanishi mumkin.</li>
+      <li><code>agent_state/sardor_agent.sqlite3</code> — vazifalar, xotiralar, eslatmalar va rozilik qaydlari. Bu ma’lumotlarning muddati avtomatik tugamaydi; tegishli boshqaruv amallari yoki egasining o‘chirish so‘rovi bilan olib tashlanadi.</li>
+      <li><code>data/api_usage.json</code> va <code>data/telegram_offset.json</code> — faqat so‘rov hisoblagichi va polling holati kabi texnik ma’lumotlar.</li>
+      <li>DPAPI bilan shifrlangan zaxiralar, agar yaratilgan bo‘lsa. Ular avtomatik muddat bilan o‘chmaydi va egasi tomonidan alohida boshqariladi.</li>
+    </ul>
+    <p>Bot faol ishlashi to‘xtatilganda ham saqlangan fayllar o‘z-o‘zidan o‘chmaydi. Egasining kompyuteri yoki Windows foydalanuvchi profiliga kirish huquqiga ega shaxslar qurilma va akkaunt xavfsizligiga qarab ma’lumotlarga xavf tug‘dirishi mumkin.</p>
+
+    <h2>7. Himoya choralari</h2>
+    <ul>
+      <li>Bot faqat sozlamada ko‘rsatilgan egasining ijobiy Telegram ID raqamiga javob beradi; ID bo‘lmasa yoki noto‘g‘ri bo‘lsa, xavfsiz tarzda ishga tushmaydi.</li>
+      <li>Suhbat tarixi va agent bazasi Windows DPAPI orqali shifrlanadi. DPAPI himoyasi joriy Windows foydalanuvchi profiliga bog‘langan; boshqa kompyuter yoki profilga ko‘chirilgan faylni ochish kafolatlanmaydi.</li>
+      <li>Telegram tokeni va OpenAI API kaliti mahalliy <code>.env</code> sozlamasida saqlanadi; ularni chat, jurnal yoki ommaviy repozitoriyga joylashtirmaslik kerak.</li>
+      <li>Ilova texnik xatolar va HTTP holat kodlarini qayd qilishi mumkin. Xabar matni va kalitlarni jurnalga yozmaslik ko‘zda tutilgan, ammo egasi jurnal fayllarini ham maxfiy deb hisoblab himoyalashi kerak.</li>
+      <li>Internetga uzatish Telegram Bot API va rozilik berilgandagina OpenAI API bilan cheklanadi. Mahalliy hujjat tahlili uchun tashqi xizmat ishlatilmaydi.</li>
+    </ul>
+    <p>Hech bir usul mutlaq xavfsizlikni kafolatlamaydi. Windows akkaunti, qurilma paroli, zararli dasturlardan himoya va zaxiralarni xavfsiz saqlash egasining zimmasida.</p>
+
+    <h2>8. Rozilikni bekor qilish va ma’lumotni o‘chirish</h2>
+    <ul>
+      <li><code>/revoke_ai</code> keyingi OpenAI so‘rovlarini bloklaydi va joriy shaxsiy chat tarixini o‘chirishga urinadi. O‘chirish muvaffaqiyati tasdiqlanmasa, <code>/clear</code> buyrug‘i bilan qayta uriniladi.</li>
+      <li><code>/clear</code> faqat joriy chatning Sardor AI’da saqlangan suhbat tarixini tozalaydi; Telegram ilovasidagi yozishmalarni yoki OpenAI’ga oldin yuborilgan ma’lumotni o‘chirmaydi.</li>
+      <li><code>/memory_delete &lt;ID&gt;</code> muayyan xotira yozuvini o‘chiradi; <code>/reminder_cancel</code> eslatmani bekor qiladi. Vazifalar va zaxira nusxalarini to‘liq o‘chirish uchun barcha ma’lumotlarni qamrab oladigan avtomatik buyruq mavjud emas.</li>
+      <li>Mahalliy ma’lumotni ko‘rish, tuzatish yoki to‘liq o‘chirish so‘rovi uchun Sardor AI egasiga murojaat qilish mumkin. Egasi so‘rovni ko‘rib chiqib, tegishli mahalliy fayllar va zaxiralarni alohida tekshiradi.</li>
+      <li>Rozilikni qaytarib olish avval bajarilgan OpenAI qayta ishlovini yoki Telegram platformasidagi nusxalarni ortga qaytarmaydi. Tashqi provayderdan o‘chirish so‘rovi avtomatik yuborilmaydi.</li>
+    </ul>
+
+    <h2>9. Uchinchi tomon xizmatlari</h2>
+    <p><strong>Telegram.</strong> Xabarlar Telegram infratuzilmasi va Bot API orqali uzatiladi. Telegram’ning o‘z maxfiylik siyosati va bot ishlab chiquvchilari shartlari ham amal qiladi: <a href="https://telegram.org/privacy" rel="noopener noreferrer">Telegram maxfiylik siyosati</a> va <a href="https://telegram.org/tos/bot-developers" rel="noopener noreferrer">Telegram Bot Platform ishlab chiquvchilari shartlari</a>.</p>
+    <p><strong>OpenAI.</strong> Faqat AI roziligi faol bo‘lganda yuborilgan suhbat mazmunini qayta ishlaydi. OpenAI xizmatlarining joriy shartlari va ma’lumot saqlash qoidalari bilan tanishish foydalanuvchining zimmasida; yuqoridagi API ma’lumot nazorati havolasi tegishli ma’lumotni beradi.</p>
+    <p>Sardor AI ma’lumotlarni sotmaydi va reklama tarmoqlariga bermaydi. Xizmat ko‘rsatuvchilar o‘z infratuzilmasida ma’lumotlarni o‘z siyosatlari va qonuniy majburiyatlariga muvofiq qayta ishlashi mumkin.</p>
+
+    <h2>10. Siyosatdagi o‘zgarishlar va murojaat</h2>
+    <p>Ma’lumotlarni qayta ishlash tartibi o‘zgarsa, ushbu sahifaning yangi sanasi va versiyasi e’lon qilinadi. AI roziligi Sardor AI’da sozlangan siyosat versiyasiga bog‘lanadi; muhim o‘zgarishlarda egasi rozilik sozlamalarini yangilashi kerak.</p>
+    <p>Maxfiylik, kirish, tuzatish yoki o‘chirish bo‘yicha murojaatlarni Sardor AI’ni boshqaruvchi egaga Telegram’dagi mavjud aloqa kanali orqali yuboring. Ommaviy aloqa manzili ushbu siyosatda ko‘rsatilmagan.</p>
+
+    <footer>
+      <p><strong>Siyosat holati:</strong> ushbu HTML hujjat Sardor AI loyihasi uchun tayyorlangan. Ommaviy HTTPS manzilga joylashtirilmaguncha u Telegram sozlamasidagi majburiy siyosat havolasi o‘rnini bosa olmaydi.</p>
+      <p class="small">Sahifa tashqi analitika skriptlarini yuklamaydi. Uni joylashtirgan hosting provayderining server jurnallari va maxfiylik qoidalari alohida amal qilishi mumkin.</p>
+    </footer>
+  </article>
+</main>
+</body>
+</html>
